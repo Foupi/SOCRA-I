@@ -87,4 +87,21 @@ public class MorseTest {
         MorseRepresentation oneThousandNineHundredAndThree = new MorseRepresentation(1903);
         assertEquals(". _ _ _ _ _ _ _ _ . _ _ _ _ _ . . . _ _ ", oneThousandNineHundredAndThree.toString());
     }
+
+    @Test
+    public void givenFiveUnderscores_ThenReturnZero() {
+        MorseRepresentation zero = new MorseRepresentation("_ _ _ _ _ ");
+        assertEquals("0", zero.toString());
+    }
+    @Test
+    public void givenOneDotAndFourUnderscores_ThenReturnOne() {
+        MorseRepresentation one = new MorseRepresentation(". _ _ _ _ ");
+        assertEquals("1", one.toString());
+    }
+
+    @Test
+    public void givenTwoDotsAndThreeUnderscores_ThenReturnTwo() {
+        MorseRepresentation two = new MorseRepresentation(". . _ _ _ ");
+        assertEquals("2", two.toString());
+    }
 }
