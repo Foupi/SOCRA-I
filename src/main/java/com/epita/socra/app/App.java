@@ -31,8 +31,15 @@ public final class App {
             String input = adapter.read();
             if (input.contentEquals(""))
                 return;
-            int numberToRepresent = Integer.valueOf(input);
-            MorseRepresentation representation = new MorseRepresentation(numberToRepresent);
+            MorseRepresentation representation;
+            try {
+                int numberToRepresent = Integer.valueOf(input);
+                representation = new MorseRepresentation(numberToRepresent);
+            }
+            catch (NumberFormatException e)
+            {
+                representation = new MorseRepresentation(input);
+            }
             adapter.write(representation.toString());
         }
     }

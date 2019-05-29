@@ -60,5 +60,48 @@ public class MorseRepresentation {
         return representation;
     }
 
+    public MorseRepresentation(String numberToConvert) {
+
+
+        StringBuilder rep_builder = new StringBuilder("");
+        for (int indexInNumber = 0; indexInNumber < numberToConvert.length(); indexInNumber += 10) {
+
+
+            String lastDigitRepresentation = numberToConvert.substring(indexInNumber, indexInNumber + 10);
+            if (lastDigitRepresentation.contentEquals( "_ _ _ _ _ ")) {
+                rep_builder.append("0");
+            }
+            if (lastDigitRepresentation.contentEquals( ". _ _ _ _ ")) {
+                rep_builder.append('1');
+            }
+            if (lastDigitRepresentation.contentEquals( ". . _ _ _ ")) {
+                rep_builder.append('2');
+            }
+            if (lastDigitRepresentation.contentEquals(". . . _ _ ")) {
+                rep_builder.append('3');
+            }
+            if (lastDigitRepresentation.contentEquals(". . . . _ ")) {
+                rep_builder.append('4');
+            }
+            if (lastDigitRepresentation.contentEquals(". . . . . ")) {
+                rep_builder.append('5');
+            }
+            if (lastDigitRepresentation.contentEquals("_ . . . . ")) {
+                rep_builder.append('6');
+            }
+            if (lastDigitRepresentation.contentEquals("_ _ . . . ")) {
+                rep_builder.append('7');
+            }
+            if (lastDigitRepresentation.contentEquals("_ _ _ . . ")) {
+                rep_builder.append('8');
+            }
+            if (lastDigitRepresentation.contentEquals("_ _ _ _ . ")) {
+                rep_builder.append('9');
+            }
+
+        }
+        representation = rep_builder.toString();
+    }
+
 
 }
